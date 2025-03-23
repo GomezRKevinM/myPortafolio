@@ -1,11 +1,77 @@
 ---
-import Welcome from '../components/Welcome.astro';
+import Skills from '../components/Skills.astro';
 import Layout from '../layouts/Layout.astro';
+import Badge from '../components/Badge.astro';
+const personalInfo = {
+	nombre : "Kevin Manuel Gómez Rojas",
+	edad : 23,
+	descripcion: 'Soy un estudiante de ingeniería de software de la universidad de cartagena en colombia, me apasiona aprender y practicar lenguajes de programación.',
+	educacion:{
+		universidad:{
+			sede: 'Piedra de Bolivar',
+			nombre: ' Universidad de Cartagena'
+		}
+	},
+	skills:['Java','Python','Javascript','Php','Css','Html']
+}
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-
-<Layout>
-	<Welcome />
+<Layout pageTitle="Home">
+	<div id="name-container">
+		<span>Hola 👋, Soy</span>
+		<h1 id="nombre">{personalInfo.nombre}</h1>
+		<span>{personalInfo.descripcion}</span>
+		<div class="line-badge">
+			<Badge text="Github" type="icon" icon="bi bi-github" platform="github" username="gomezrkevinm"/>
+			<Badge text="Gitlab" type="icon" icon="bi bi-gitlab"  platform = "gitlab" username="gomezrojaskevinmanuel2212"/>
+			<Badge text="Linkedin" type="icon" icon="bi bi-linkedin" />
+		</div>
+	</div>
+	<div>
+		<h2>Lenguajes</h2>
+		<div class="skills">
+			<Skills />
+		</div>
+	</div>
 </Layout>
+<style>
+	#nombre{
+		display: block;
+		width: fit-content;
+		height: auto;
+		padding: 9px 10px;
+		position: relative;
+		contain: content;
+		white-space: nowrap;
+		text-wrap: nowrap;
+		animation: showName 1.7s steps(24) forwards;
+		overflow: hidden;
+		border-right: 4px solid transparent;
+		font-size: 3rem;
+	}
+	#name-container{
+		z-index: 10;
+	}
+	.skills{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1.3rem;
+		margin-top: 1.3rem;
+	}
+
+	@keyframes showName {
+		0%{
+			width: 0%;
+			border-right-color: transparent;
+		}
+		50%{
+			border-right-color: #777 ;
+		}
+		100%{
+			width: 100%;
+			border-right-color: transparent;
+		}
+	}
+
+</style>
+

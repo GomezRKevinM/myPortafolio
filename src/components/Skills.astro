@@ -1,0 +1,5 @@
+---
+import SkillTarget from "./skillTarget.astro";
+const allSkil = await Astro.glob("../pages/skills/*.md")
+---
+    {allSkil.map((skill)=><SkillTarget nombre={skill.frontmatter.lenguaje} descripcion={skill.frontmatter.descripcion} src={skill.frontmatter.imageUrl} />)}

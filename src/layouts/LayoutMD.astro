@@ -1,0 +1,39 @@
+---
+import Layout from "./Layout.astro"
+const {frontmatter} = Astro.props
+---
+<Layout pageTitle={frontmatter.title} >
+    <h1 class="title">{frontmatter.title} <span class="back-btn"><i class="bi bi-arrow-left"></i> Volver</span></h1>
+    <slot/>
+</Layout>
+<style>
+    .title{
+        display: flex;
+        justify-content: space-between;
+    }
+    .back-btn{
+        /* border-radius: 999px; */
+        /* border-bottom-left-radius: 999px; */
+        padding: 5px 12px;
+        background: var(--btn-back-bg);
+        font-size: 1.8rem;
+        color: var(--btn-back-color);
+        user-select: none;
+        transition: all 300ms ease-in-out;
+        border: 2px solid transparent;
+        z-index: 11;
+    }
+    .back-btn:hover{
+        color: aquamarine;
+        cursor: pointer;
+        border-color: aquamarine;
+    }
+</style>
+<script>
+    const btn_back = document.querySelector('.back-btn');
+
+    btn_back?.addEventListener('click',()=>{
+        // window.location.href= "/"
+        history.back()
+    })
+</script>

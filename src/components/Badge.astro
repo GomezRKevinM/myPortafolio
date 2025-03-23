@@ -1,0 +1,46 @@
+---
+import { undefined } from "astro:schema"
+
+const { text, type, icon,platform, username} = Astro.props
+---
+{ platform != undefined && 
+<a href={`https://www.${platform}.com/${username}`}>
+    <div class="Badge">
+        <span>{text}</span>
+        {type=="icon" && <i class={icon} ></i>}
+        {type!="icon" && <img src="" alt="" />}
+      
+    </div>
+</a>}{platform == undefined &&
+    <div class="Badge">
+        <span>{text}</span>
+        {type=="icon" && <i class={icon}></i>}
+        {type!="icon" && <img src="" alt="" />}
+      
+    </div>
+}
+<style>
+    .Badge{
+        padding: 5px 9px;
+        color: var(--Badge-color);
+        border: 1px solid var(--Badge-border);
+        background:var(--Badge-background) ;
+        width: fit-content;
+        border-radius: 999px;
+        user-select: none;
+        margin-top: 25px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        transition: all 300ms ease;
+    }a{
+        text-decoration: none;
+    }
+    .Badge:hover{
+        background: var(--Badge-hover-bg) ;
+        color: var(--Badge-hover-color);
+        border-color: aquamarine;
+        cursor: pointer;
+    }
+</style>
