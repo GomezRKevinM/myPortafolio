@@ -46,18 +46,20 @@ body{
 :root:not(.dark) {
     color-scheme: light;
     --background: linear-gradient(160deg, #ecfffb 70%, rgba(127, 255, 150, 0.701));
-    --Badge-border: aquamarine;
-    --Badge-color: aquamarine;
+    --Badge-border: #398efd;
+    --Badge-hover-border: #398efd;
+    --Badge-color: #398efd;
     --Badge-background: #fff;
-    --Badge-hover-bg:aquamarine;
+    --Badge-hover-bg:#398efd;
     --Badge-hover-color:#fff;
-    --skill-color:aquamarine;
-    --skill-border:aquamarine;
+    --skill-color:#398efd;
+    --skill-border:#398efd;
     --skill-bg:linear-gradient(45deg, #88888810,#ffffff20);
-    --skill-hover-color:#255;
-    --skill-hover-bg:linear-gradient(45deg, #60ee99,#f4fffad7);
+    --skill-hover-color:#398efd;
+    --skill-hover-border: aquamarine;
+    --skill-hover-bg:linear-gradient(45deg, #60ee99 20%,#f4fffad7);
     --text-color: #333;
-    --text-color-a: aquamarine;
+    --text-color-a: #444;
     --header-border-color: #cccccc;
     --header-hover-border-color: #888888;
     --header-hover-background-color: rgba(0, 0, 0, 0.05);
